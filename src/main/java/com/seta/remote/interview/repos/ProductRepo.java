@@ -28,4 +28,8 @@ public interface ProductRepo extends CrudRepository<Product, Long> {
 	void TenPercentDiscount(@Param("id") long id,@Param("price") double price);
 	
 	//5
+	Product findFirstByCategoryOrderByPriceAsc(String catergory);
+
+	//10
+	Product findFirstByCategoryOrderByPriceDesc(String catergory);
 }

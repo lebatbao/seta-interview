@@ -18,4 +18,13 @@ public interface OrderRepo extends CrudRepository<Order, Long> {
 	//4
 	@Query("SELECT o FROM Order o WHERE o.orderDate between :firstDate and :secondDate and o.customer.tier = tier")
 	List<Order> findByOrderDateBetweenAndCustomerTier(@Param("firstDate")LocalDate firstDate,@Param("secondDate")LocalDate secondDate,@Param("tier")int tier);
+
+	//6
+	List<Order> findFirst3ByOrderByOrderDateDesc();
+
+	//7
+	List<Order> findByOrderDate(LocalDate orderDate);
+
+	//8
+	List<Order> findByOrderDateBetween(LocalDate firstDate,LocalDate secondDate);
 }
