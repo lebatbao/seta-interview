@@ -32,4 +32,6 @@ public interface ProductRepo extends CrudRepository<Product, Long> {
 
 	//10
 	Product findFirstByCategoryOrderByPriceDesc(String catergory);
+
+	
 }
